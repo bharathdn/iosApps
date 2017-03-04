@@ -22,9 +22,17 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         UIView.animate(withDuration: 1, animations: {
             self.billValue.alpha = 1
-//            self.billValue.beginFloatingCursor(at: CGPoint(0))
             self.billValue.becomeFirstResponder()
          })
+        
+        let defaults = UserDefaults.standard
+        let lastAppCloseTime = defaults.object(forKey: "lastAppCloseTime") as? NSDate ?? NSDate.distantFuture as NSDate
+        let timeDiff = NSDate().timeIntervalSince(lastAppCloseTime as Date)
+        
+        // show the previous bill amount if app restarted time < 10 min
+        if(Int(timeDiff) < 600) {
+            billValue.text = defaults.string(forKey: "lastBillValue")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,12 +43,27 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
         tipControl.selectedSegmentIndex = defaults.integer(forKey: "tipControlIndex")
-        
+
         // If there was a billValue before navigating to settings
         // and if the tip% changed, then recompute the tip and total
         if(!(billValue.text?.isEmpty)!) {
             calculateTip((Any).self)
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        let defaults = UserDefaults.standard
+        defaults.set(NSDate.init(), forKey: "lastAppCloseTime")
+        defaults.set(billValue.text, forKey: "lastBillValue")
+        defaults.synchronize()
+        
+        print("settings saved before terminate")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
     }
     
     @IBAction func calculateTip(_ sender: Any) {

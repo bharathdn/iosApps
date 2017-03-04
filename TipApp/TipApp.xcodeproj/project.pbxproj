@@ -48,7 +48,7 @@
 		A1FC61021E690BDB00A23157 /* TipAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FC61061E690BDB00A23157 /* TipAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipAppUITests.swift; sourceTree = "<group>"; };
 		A1FC61081E690BDB00A23157 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A1FC61141E693F1C00A23157 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
+		A1FC61141E693F1C00A23157 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = TipApp/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -511,6 +511,7 @@
 				A1FC610D1E690BDB00A23157 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A1FC610E1E690BDB00A23157 /* Build configuration list for PBXNativeTarget "TipAppTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +520,7 @@
 				A1FC61101E690BDB00A23157 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A1FC61111E690BDB00A23157 /* Build configuration list for PBXNativeTarget "TipAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +529,7 @@
 				A1FC61131E690BDB00A23157 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

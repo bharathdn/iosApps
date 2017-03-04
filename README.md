@@ -40,7 +40,7 @@ challenges encountered while building the app: Figuring out the animations betwe
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2017 Bharath D N Reddy
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

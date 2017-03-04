@@ -6,7 +6,7 @@ Tip Buddy is a tip calculator application for iOS.
 
 Submitted by: Bharath D N Reddy
 
-Time spent: **X** hours spent in total
+Time spent: 9 hours spent in total
 
 ## User Stories
 
@@ -36,7 +36,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+challenges encountered while building the app: Figuring out the animations between views. i.e., how to have an initial view  and animate/transition to another when user starts typing the numbers  
 
 ## License
 

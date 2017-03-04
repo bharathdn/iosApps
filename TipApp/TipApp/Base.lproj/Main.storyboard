@@ -72,9 +72,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90040379762649536" green="0.94835788011550903" blue="0.99833661317825317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="Yrr-Ya-ejJ" appends="YES" id="mmF-Xu-oRc"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Tip Buddy" id="2le-tz-dFX">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="IWG-iF-F1B">
@@ -93,11 +90,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Yrr-Ya-ejJ">
-                    <connections>
-                        <action selector="onTap:" destination="BYZ-38-t0r" id="QWP-Ff-zOf"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="424.5" y="36.5"/>
         </scene>

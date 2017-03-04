@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         UIView.animate(withDuration: 1, animations: {
             self.billValue.alpha = 1
+//            self.billValue.beginFloatingCursor(at: CGPoint(0))
+            self.billValue.becomeFirstResponder()
          })
     }
 
@@ -39,10 +41,6 @@ class ViewController: UIViewController {
         if(!(billValue.text?.isEmpty)!) {
             calculateTip((Any).self)
         }
-    }
-
-    @IBAction func onTap(_ sender: Any) {
-        view.endEditing(true)
     }
     
     @IBAction func calculateTip(_ sender: Any) {

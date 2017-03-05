@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var totalValueLabel: UILabel!
+    var localeCurrencySymbol: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,9 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
         tipControl.selectedSegmentIndex = defaults.integer(forKey: "tipControlIndex")
+        
+        localeCurrencySymbol = Locale.current.currencySymbol
+        billValue.placeholder = localeCurrencySymbol
 
         // If there was a billValue before navigating to settings
         // and if the tip% changed, then recompute the tip and total
@@ -71,9 +75,13 @@ class ViewController: UIViewController {
         let tipPercentages = [0.15, 0.20, 0.25]
         let bill = Double(billValue.text!) ?? 0
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
+        let total = bill + tip
         
-        tipValueLabel.text = String(format: "$%.2f", tip)
-        totalValueLabel.text = String(format: "$%.2f", tip + bill)
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        
+        tipValueLabel.text = formatter.string(from: tip as NSNumber)
+        totalValueLabel.text = formatter.string(from: total as NSNumber)
     }
     
     func toggleElements(_ value: CGFloat) {

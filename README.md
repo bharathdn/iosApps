@@ -6,7 +6,7 @@ Tip Buddy is a tip calculator application for iOS.
 
 Submitted by: Bharath D N Reddy
 
-Time spent: 9 hours spent in total
+Time spent: 13 hours spent in total
 
 ## User Stories
 
@@ -17,8 +17,8 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 * [x] UI animations
-* [ ] Remembering the bill amount across app restarts (if <10mins)
-* [ ] Using locale-specific currency and currency thousands separators.
+* [x] Remembering the bill amount across app restarts (if <10mins)
+* [x] Using locale-specific currency and currency thousands separators.
 * [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
 The following **additional** features are implemented:
@@ -36,7 +36,10 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-challenges encountered while building the app: Figuring out the animations between views. i.e., how to have an initial view  and animate/transition to another when user starts typing the numbers  
+challenges encountered while building the app: 
+* Figuring out the animations between views. i.e., how to have an initial view  and animate/transition to another when user starts typing the numbers
+* Print statements won't print to console after app is terminated! this made it challenging to experiment with the lifecycle methods
+
 
 ## License
 

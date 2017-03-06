@@ -10,7 +10,9 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    @IBOutlet weak var tipSettingControl: UISegmentedControl!
+    @IBOutlet weak var defaultTipPercentLabel: UILabel!
+    @IBOutlet weak var defaultTipPercentSlider: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -22,12 +24,14 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func onDefaultTipValueChange(_ sender: Any) {
-        viewWillDisappear(true)
+        defaultTipPercentLabel.text = String(Int(defaultTipPercentSlider.value)) + "%"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
-        tipSettingControl.selectedSegmentIndex = defaults.integer(forKey: "tipControlIndex")
+        let defaultTipPercent = Float(defaults.integer(forKey: "defaultTipValue"))
+        defaultTipPercentSlider.setValue(defaultTipPercent, animated: false)
+        onDefaultTipValueChange(0)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,7 +39,7 @@ class SettingsViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         let defaults = UserDefaults.standard
-        defaults.set(tipSettingControl.selectedSegmentIndex, forKey: "tipControlIndex")
+        defaults.set(Int(defaultTipPercentSlider.value), forKey: "defaultTipValue")
         defaults.synchronize()
     }
     
